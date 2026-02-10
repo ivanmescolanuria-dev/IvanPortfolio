@@ -1,0 +1,23 @@
+---
+// src/components/Card.astro
+import { Image } from 'astro:assets';
+const { titol, descripcio, imatge, alt, url } = Astro.props;
+---
+
+<article class="card">
+  <div style="overflow: hidden;"> <Image 
+      src={imatge} 
+      alt={alt} 
+      width={400} 
+      height={250} 
+      class="card-img"
+    />
+  </div>
+  <div class="contingut">
+    <h3>{titol}</h3>
+    <p>{descripcio}</p>
+    <a href={url} class="card-link" aria-label={`Veure projecte ${titol}`}>
+      Veure projecte <span>→</span>
+    </a>
+  </div>
+</article>

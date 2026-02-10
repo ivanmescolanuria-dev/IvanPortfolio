@@ -1,0 +1,27 @@
+---
+// Aquests imports són OBLIGATORIS aquí també
+import Layout from "../layouts/Layout.astro";
+import Titol from "../components/titol.astro";
+import cvData from "../../data/cv.json";
+---
+
+<Layout title="Escrits - Ivan Martín">
+  <Titol text="Els meus Escrits" />
+  
+  <section class="blog-list">
+    {cvData.blog_posts.map((post) => (
+      <article class="post-card">
+        <h3>{post.title}</h3>
+        <time datetime={post.date}>{post.date}</time>
+        <p>{post.summary}</p>
+        <a href="#" aria-label={`Llegir més sobre ${post.title}`}>Llegir més</a>
+      </article>
+    ))}
+  </section>
+</Layout>
+
+<style>
+  .blog-list { display: grid; gap: 2rem; padding: 2rem 0; }
+  .post-card { border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+  time { color: #666; font-size: 0.9rem; }
+</style>

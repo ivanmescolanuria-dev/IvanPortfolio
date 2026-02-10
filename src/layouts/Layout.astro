@@ -1,0 +1,188 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portfolio professional d'Ivan Martín" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<a href="#main-content" class="skip-link">Anar al contingut principal</a>
+
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #005ce6;
+		--primary-hover: #0044ab;
+		--text-main: #111827;
+		--text-muted: #4b5563;
+		--bg: #ffffff;
+		--bg-alt: #f9fafb;
+		--border: #e5e7eb;
+		--radius: 12px;
+		--container-width: 1100px;
+	}
+
+	/* RESET BÀSIC */
+	*, *::before, *::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+		background: var(--bg);
+		color: var(--text-main);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	/* SKIP LINK */
+	.skip-link {
+		position: absolute;
+		top: -100px;
+		left: 0;
+		background: var(--primary);
+		color: white;
+		padding: 1rem;
+		z-index: 9999;
+		text-decoration: none;
+		font-weight: bold;
+		transition: top 0.3s ease;
+	}
+	.skip-link:focus { top: 0; }
+
+	/* CONTENIDOR PRINCIPAL */
+	.container {
+		max-width: var(--container-width);
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	/* SECCIONS */
+	section {
+		padding: 4rem 0;
+	}
+
+	h2 {
+		font-size: 2rem;
+		font-weight: 800;
+		margin-bottom: 2.5rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	h2::after {
+		content: "";
+		flex: 1;
+		height: 1px;
+		background: var(--border);
+	}
+
+	/* --- FIX: GRID DE PROJECTES --- */
+	.grid {
+		display: grid;
+		/* Força 3 columnes en escriptori, 2 en tablet i 1 en mòbil */
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem; /* Espaiat fix i net */
+		align-items: stretch;
+	}
+
+	/* --- FIX: CARDS DELS PROJECTES --- */
+	.card {
+		background: var(--bg);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		display: flex;
+		flex-direction: column;
+		height: 100%; /* Totes les cards igual d'altes */
+		overflow: hidden;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+		border-color: var(--primary);
+	}
+
+	.card img, .card .card-img {
+		width: 100%;
+		height: 200px; /* Alçada fixa de la imatge */
+		object-fit: cover; /* Evita deformació */
+		display: block;
+	}
+
+	.card .contingut {
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1; /* El contingut ocupa l'espai restant */
+	}
+
+	.card h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+		font-weight: 700;
+	}
+
+	.card p {
+		font-size: 0.95rem;
+		color: var(--text-muted);
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
+		/* Limita el text a 3 línies per mantenir l'ordre */
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.card-link {
+		margin-top: auto; /* Botó sempre a la part de baix */
+		color: var(--primary);
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+
+	/* FOOTER */
+	footer {
+		background: var(--bg-alt);
+		padding: 3rem 0;
+		border-top: 1px solid var(--border);
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	/* RESPONSIVE */
+	@media (max-width: 640px) {
+		.grid {
+			grid-template-columns: 1fr; /* Una columna en mòbil */
+		}
+		section { padding: 2.5rem 0; }
+	}
+</style>

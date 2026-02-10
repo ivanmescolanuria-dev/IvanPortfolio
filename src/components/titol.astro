@@ -1,0 +1,15 @@
+---
+const { nom, subtitol, resum } = Astro.props;
+---
+<header>
+  <h1>{nom}</h1>
+  <p class="subtitol">{subtitol}</p>
+  <p class="resum">{resum}</p>
+</header>
+
+<style>
+  header { padding: 4rem 0; font-family: sans-serif; }
+  h1 { font-size: 3rem; margin: 0; color: #111; }
+  .subtitol { font-size: 1.2rem; color: #007aff; font-weight: bold; margin: 0.5rem 0; }
+  .resum { font-size: 1.1rem; color: #666; max-width: 600px; line-height: 1.6; }
+</style>

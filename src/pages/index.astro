@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navegacio from '../components/Navegacio.astro';
+import Titol from '../components/titol.astro';
+import Card from '../components/Card.astro';
+import cvData from '../../data/cv.json';
+---
+
+<Layout title={`Portfolio d'${cvData.name}`}>
+  <header>
+    <div class="container">
+      <Navegacio />
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <Titol 
+      nom={cvData.name} 
+      subtitol={cvData.title} 
+      resum={cvData.profile_summary} 
+    />
+
+    <section id="projectes" aria-labelledby="header-projectes">
+      <h2 id="header-projectes">Projectes destacats</h2>
+      <div class="grid">
+        {cvData.projects.map((p) => (
+          <Card 
+            titol={p.name} 
+            descripcio={p.description} 
+            imatge={p.image} 
+            alt={p.alt} 
+            url={p.url} 
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="experiencia" aria-labelledby="header-experiencia">
+      <h2 id="header-experiencia">Experiència Professional</h2>
+      <div class="experiencia-llista">
+        {cvData.experience.map((exp) => (
+          <article class="exp-item">
+            <header>
+              <h3>{exp.position}</h3>
+              <p class="company">{exp.company} | <time>{exp.duration}</time></p>
+            </header>
+            <ul>
+              {exp.responsibilities.map((res) => (
+                <li>{res}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section id="contacte" aria-labelledby="header-contacte">
+      <h2 id="header-contacte">Contacte</h2>
+      <div class="contacte-wrapper">
+        <p>Estic disponible per a nous projectes. Parlem?</p>
+        <address class="contacte-info">
+          <p>📧 Email: <a href={`mailto:${cvData.contact.email}`}>{cvData.contact.email}</a></p>
+          <p>📍 Ubicació: {cvData.contact.location}</p>
+          <div class="social-links">
+            <a href={cvData.contact.linkedin} class="social-btn" target="_blank">LinkedIn</a>
+            <a href={cvData.contact.github} class="social-btn" target="_blank">GitHub</a>
+          </div>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 {cvData.name} - Fet amb Astro i HTML semàntic</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* Estils addicionals per a Experiència i Contacte */
+  .experiencia-llista {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .exp-item {
+    border-left: 4px solid var(--primary);
+    padding-left: 1.5rem;
+  }
+
+  .company {
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0.2rem 0;
+  }
+
+  .exp-item ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+  }
+
+  .contacte-wrapper {
+    background: var(--primary-soft);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .contacte-info {
+    font-style: normal;
+    margin-top: 1.5rem;
+  }
+
+  .social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-btn {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+</style>
