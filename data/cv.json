@@ -68,50 +68,49 @@
         { "language": "Espanyol", "level": "Nadiu" },
         { "language": "Anglès", "level": "Avançat" }
     ],
-    "projects": [
-    {
-      "name": "Projecte 1: E-commerce Tech",
-      "description": "Botiga online completa amb passarel·la de pagament i gestió d'estoc.",
-      "image": "/public/images/image1.jpg",
-      "alt": "Vista de paisatge naturaleza dia solellat Bosque.",
-      "url": "https://github.com/ivan/proyecto1"
-    },
-    {
-      "name": "Projecte 2: Dashboard Administratiu",
-      "description": "Panell de control per a la visualització de dades en temps real amb gràfics interactius.",
-      "image": "/public/images/imatge2.jpg",
-      "alt": "Videojoc fortnite, pantalla de carga, default. ",
-      "url": "https://github.com/ivan/proyecto2"
-    },
-    {
-      "name": "Projecte 3: App de Tasques",
-      "description": "Aplicació de productivitat amb sistema de llistes i notificacions push.",
-      "image": "/public/images/imatge3.jpg",
-      "alt": "Gat negre, atent, ulls negres, adorable, juganer, cazando. feliu",
-      "url": "https://github.com/ivan/proyecto3"
-    },
-    {
-      "name": "Projecte 4: Xarxa Social de Viatges",
-      "description": "Plataforma per compartir rutes i fotografies de viatges per tot el món.",
-      "image": "/public/images/imatge4.jpg",
-      "alt": "Pilota futbol, blanc negre pentagono",
-      "url": "https://github.com/ivan/proyecto4"
-    },
-    {
-      "name": "Projecte 5: Gestor de Portfolis",
-      "description": "Eina per a creatius que permet generar portfolis dinàmics automàticament.",
-      "image": "/public/images/imatge5.jpg",
-      "alt": "Sushi salmon, arroz comida, visual, japon",
-      "url": "https://github.com/ivan/proyecto5"
-    },
-    {
-      "name": "Projecte 6: API de Reserves",
-      "description": "Backend robust per a la gestió de reserves en línia per a restaurants.",
-      "image": "/public/images/imatge6.jpg",
-      "alt": "Mazeta vacia marron",
-      "url": "https://github.com/ivan/proyecto6"
-    }
-  ],
+    "projects": [{
+            "name": "Projecte 1: E-commerce Tech",
+            "description": "Botiga online completa amb passarel·la de pagament i gestió d'estoc.",
+            "image": "/public/images/image1.jpg",
+            "alt": "Vista de paisatge naturaleza dia solellat Bosque.",
+            "url": "https://github.com/ivan/proyecto1"
+        },
+        {
+            "name": "Projecte 2: Dashboard Administratiu",
+            "description": "Panell de control per a la visualització de dades en temps real amb gràfics interactius.",
+            "image": "/public/images/imatge2.jpg",
+            "alt": "Videojoc fortnite, pantalla de carga, default. ",
+            "url": "https://github.com/ivan/proyecto2"
+        },
+        {
+            "name": "Projecte 3: App de Tasques",
+            "description": "Aplicació de productivitat amb sistema de llistes i notificacions push.",
+            "image": "/public/images/imatge3.jpg",
+            "alt": "Gat negre, atent, ulls negres, adorable, juganer, cazando. feliu",
+            "url": "https://github.com/ivan/proyecto3"
+        },
+        {
+            "name": "Projecte 4: Xarxa Social de Viatges",
+            "description": "Plataforma per compartir rutes i fotografies de viatges per tot el món.",
+            "image": "/public/images/imatge4.jpg",
+            "alt": "Pilota futbol, blanc negre pentagono",
+            "url": "https://github.com/ivan/proyecto4"
+        },
+        {
+            "name": "Projecte 5: Gestor de Portfolis",
+            "description": "Eina per a creatius que permet generar portfolis dinàmics automàticament.",
+            "image": "/public/images/imatge5.jpg",
+            "alt": "Sushi salmon, arroz comida, visual, japon",
+            "url": "https://github.com/ivan/proyecto5"
+        },
+        {
+            "name": "Projecte 6: API de Reserves",
+            "description": "Backend robust per a la gestió de reserves en línia per a restaurants.",
+            "image": "/public/images/imatge6.jpg",
+            "alt": "Mazeta vacia marron",
+            "url": "https://github.com/ivan/proyecto6"
+        }
+    ],
     "blog_posts": [{
             "title": "Optimització de React: Com millorar el rendiment de la teva aplicació",
             "summary": "Explorem tècniques com memoization, lazy loading i code splitting per optimitzar aplicacions React.",
